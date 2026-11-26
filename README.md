@@ -35,6 +35,40 @@ All visual effects can be tuned to your preference:
 - Design & creative work
 - Deep focus sessions
 
+## URL Control (Focus Mode)
+
+You can start Focus Mode directly via URL, including custom data like duration, icon, and text.
+
+### Scheme
+
+`blurrius://focus`
+
+### Supported Query Parameters
+
+- `duration` / `length` / `s`: total duration in seconds
+- `hours` / `h`: hours (used when `duration` is not set)
+- `minutes` / `m`: minutes (used when `duration` is not set)
+- `seconds` / `sec`: seconds (used when `duration` is not set)
+- `icon` / `symbol` / `sf`: SF Symbol name (e.g. `moon.fill`)
+- `title`: main title shown in overlay
+- `text` / `message` / `subtitle`: optional secondary text
+- `finishedText` / `doneText` / `completeText`: text shown when timer ends
+
+### Examples
+
+```bash
+open "blurrius://focus?duration=1500"
+
+open "blurrius://focus?hours=0&minutes=25&seconds=0&icon=moon.fill&title=Deep%20Work&text=No%20distractions&finishedText=Done"
+
+open "blurrius://focus?length=90&icon=lock.shield.fill&title=Quick%20Focus"
+```
+
+### Notes
+
+- If no duration is provided, a default duration is used.
+- `duration` (seconds) has priority over `hours`/`minutes`/`seconds`.
+- Invalid or unknown icon names fall back to the default icon.
 
 
 
